@@ -1,4 +1,4 @@
-package com.example.luckyvickyaos
+package com.example.luckyvickyaos.fragments
 
 import android.app.AlertDialog
 import android.content.Context
@@ -14,6 +14,8 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.luckyvickyaos.HabitActivity
+import com.example.luckyvickyaos.R
 import org.json.JSONObject
 
 class CreateHabitFragment : Fragment() {

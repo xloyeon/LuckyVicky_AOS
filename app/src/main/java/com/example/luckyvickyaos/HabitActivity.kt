@@ -1,16 +1,11 @@
 package com.example.luckyvickyaos
 
-import android.content.ContentValues
-import android.content.Intent
-import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.luckyvickyaos.fragments.CreateHabitFragment
+import com.example.luckyvickyaos.fragments.HabitDetailFragment
+import com.example.luckyvickyaos.fragments.HabitListFragment
 
 class HabitActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.luckyvickyaos
+package com.example.luckyvickyaos.fragments
 
 import android.content.ContentValues
 import android.content.Context
@@ -13,17 +13,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.luckyvickyaos.R
 import com.example.luckyvickyaos.data.Habit
 import com.google.gson.Gson
-import org.json.JSONObject
-import retrofit2.Retrofit
-import java.io.Serializable
 
 class HabitListFragment : Fragment() {
 
