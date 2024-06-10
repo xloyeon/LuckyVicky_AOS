@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editText_habitTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Habit Title" />
+
+    <EditText
+        android:id="@+id/editText_habitDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Habit Description" />
+
+    <EditText
+        android:id="@+id/editText_goalCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Goal Count"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/button_selectAnimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Animal" />
+
+    <Button
+        android:id="@+id/button_selectColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Color" />
+
+    <Button
+        android:id="@+id/button_createHabit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Habit" />
+
+</LinearLayout>

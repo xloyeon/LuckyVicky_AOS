@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageView_animal"
+        android:layout_width="90dp"
+        android:layout_height="100dp"
+        android:layout_gravity="start"
+        android:layout_marginEnd="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/otter" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 습관 제목 -->
+        <TextView
+            android:id="@+id/textView_habitTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Habit Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 목표 버튼들을 표시할 레이아웃 -->
+        <LinearLayout
+            android:id="@+id/linearLayout_goalButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical" />
+
+    </LinearLayout>
+
+</LinearLayout>
