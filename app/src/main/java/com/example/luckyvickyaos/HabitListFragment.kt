@@ -34,8 +34,14 @@ class HabitListFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_habit_list, container, false)
 
+        // 버튼 텍스트를 "습관생성"으로 설정
+        val createHabitButton = activity?.findViewById<Button>(R.id.btn_create_habit)
+        createHabitButton?.text = "습관 생성"
+
+
         // 습관 목록을 서버에서 받아옵니다.
-        val sharedPreferences = requireContext().getSharedPreferences("user_info", Context.MODE_PRIVATE)
+        val sharedPreferences =
+            requireContext().getSharedPreferences("user_info", Context.MODE_PRIVATE)
         val userId = sharedPreferences.getLong("user_id", -1)
 
         // 현재 진행 중인 습관 목록을 표시합니다.
@@ -52,7 +58,8 @@ class HabitListFragment : Fragment() {
         val request = JsonObjectRequest(
             Request.Method.GET, url, null,
             Response.Listener { response ->
-                val habitListResponse = Gson().fromJson(response.toString(), HabitListResponse::class.java)
+                val habitListResponse =
+                    Gson().fromJson(response.toString(), HabitListResponse::class.java)
                 // 서버로부터 받아온 습관 목록을 화면에 표시
                 displayHabitList(habitListResponse.habitResponseList)
             },
@@ -85,18 +92,18 @@ class HabitListFragment : Fragment() {
                 "산호" -> R.drawable.coral
                 "아프리카 코끼리" -> R.drawable.elephant
                 "마운틴 고릴라" -> R.drawable.gorilla
-                "수달"->R.drawable.otter
-                "판다"->R.drawable.panda
-                "벵갈 호랑이"-> R.drawable.tiger
-                "바다거북"-> R.drawable.turtle
+                "수달" -> R.drawable.otter
+                "판다" -> R.drawable.panda
+                "벵갈 호랑이" -> R.drawable.tiger
+                "바다거북" -> R.drawable.turtle
                 else -> R.drawable.otter // 기본 아이콘 설정
             }
             animalImageView.setImageResource(animalDrawableResId)
 
 
-
             // 목표 버튼 레이아웃 설정
-            val goalButtonLayout = habitLayout.findViewById<LinearLayout>(R.id.linearLayout_goalButtons)
+            val goalButtonLayout =
+                habitLayout.findViewById<LinearLayout>(R.id.linearLayout_goalButtons)
 
             val buttonWidth = resources.getDimensionPixelSize(R.dimen.button_width)
             val buttonHeight = resources.getDimensionPixelSize(R.dimen.button_height)
@@ -105,7 +112,8 @@ class HabitListFragment : Fragment() {
                 buttonHeight
             ).apply {
                 weight = 1f // 각 버튼의 가중치를 설정합니다.
-                marginEnd = resources.getDimensionPixelSize(R.dimen.button_margin) // 각 버튼 사이의 간격을 설정합니다.
+                marginEnd =
+                    resources.getDimensionPixelSize(R.dimen.button_margin) // 각 버튼 사이의 간격을 설정합니다.
             }
 
             val goalCount = habit.goal_count ?: 0
@@ -134,9 +142,30 @@ class HabitListFragment : Fragment() {
             }
 
 
+            // 습관 항목 클릭 이벤트 추가
+            habitLayout.setOnClickListener {
+                // 클릭된 습관 항목의 ID를 사용하여 상세 페이지로 이동
+                habit.id?.let { it1 -> navigateToHabitDetail(it1) }
+            }
+
             // 습관 레이아웃을 화면에 추가합니다.
             linearLayout?.addView(habitLayout)
         }
+    }
+
+    // 습관 상세 페이지로 이동하는 함수
+    private fun navigateToHabitDetail(habitId: Long) {
+        // 습관 상세 페이지로 이동하는 코드
+        val bundle = Bundle()
+        bundle.putLong("habitId", habitId)
+
+        val habitDetailFragment = HabitDetailFragment()
+        habitDetailFragment.arguments = bundle
+
+        fragmentManager?.beginTransaction()
+            ?.replace(R.id.fragment_container, habitDetailFragment)
+            ?.addToBackStack(null)
+            ?.commit()
     }
 }
 

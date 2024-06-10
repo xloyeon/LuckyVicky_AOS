@@ -28,6 +28,9 @@ class CreateHabitFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_create_habit, container, false)
 
+        val createHabitButton = activity?.findViewById<Button>(R.id.btn_create_habit)
+        createHabitButton?.text = "목록가기"
+
         // View 요소 초기화
         val titleEditText = view.findViewById<EditText>(R.id.editText_habitTitle)
         val descriptionEditText = view.findViewById<EditText>(R.id.editText_habitDescription)

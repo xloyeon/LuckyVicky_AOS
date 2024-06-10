@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 습관 제목 -->
+    <TextView
+        android:id="@+id/textView_habitTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- 습관 설명 -->
+    <TextView
+        android:id="@+id/textView_habitDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 목표 횟수 -->
+    <TextView
+        android:id="@+id/textView_goalCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- 습관 동물 이미지 -->
+    <ImageView
+        android:id="@+id/imageView_animal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/habit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" />
+
+    <Button
+        android:id="@+id/btn_delete_habit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="삭제" />
+
+
+</LinearLayout>
